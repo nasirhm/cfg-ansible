@@ -1,0 +1,35 @@
+---
+# tasks file for python
+- name: remove retired/deprecated Python runtime packages
+  package:
+    state: absent
+    name: 
+      - python34
+      - python34-libs
+      - python34-pip
+      - python34-setuptools
+      - python36u
+      - python36u-libs
+      - python36u-pip
+      - python36u-setuptools
+
+- name: install default python3
+  package:
+    status: present
+    name:
+      - python3
+      - python3-pip
+
+- name: install python38 & python3-flake8
+  package: 
+    state: present
+    name:
+      - python38
+      - python3-flake8
+
+- name: install/upgrade pipenv, poetry (via pip)
+  package:
+    state: latest
+    name:
+      - pipenv
+      - poetry

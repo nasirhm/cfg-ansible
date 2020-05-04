@@ -1,0 +1,8 @@
+---
+# tasks file for thunderbird
+- name: install thunderbird
+  package:
+    state: present
+    name:
+      - thunderbird
+      - thunderbird-enigmail

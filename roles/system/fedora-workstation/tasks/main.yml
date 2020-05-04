@@ -1,0 +1,83 @@
+---
+# tasks file for system/fedora-workstation
+- name: add/upgrade RPM Fusion free/non-free repositories
+  package:
+    state: latest
+    name:
+      - https://download1.fedoraproject.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
+      - https://download1.fedoraproject.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
+
+- name: remove unused packages
+  package:
+    state: absent
+    name:
+      - gnome-boxes
+      - gnome-calendar
+      - gnome-characters
+      - gnome-contacts
+      - gnome-font-viewer
+      - gnome-getting-started-docs
+      - gnome-initial-setup
+      - gnome-maps
+      - gnome-photos
+      - gnome-weather
+      - gnome-classic-session
+      - gnome-documents
+      - gnome-documents-libs
+      - gnome-system-monitor
+      - gobby05
+      - logwatch
+      - powerline
+      - tmux
+      - mediawriter
+      - cmus
+      - evolution
+      - evolution-ews
+      - evolution-help
+      - tomahawk
+
+- name: install base packages
+  package:
+    state: present
+    name:
+      - ansible
+      - podman
+      - asciidoctor
+      - chromium
+      - git
+      - golang
+      - golang-godoc
+      - gparted
+      - overpass-fonts
+      - overpass-mono-fonts
+      - network-manager-applet
+      - moby-engine
+      - youtube-dl
+      - wireshark
+      - yamllint
+      - youtube-dl
+      - inkspace
+      - java-11-openjdk
+      - feh
+      - buildah
+      - ffmpeg
+      - exfat-utils
+      - gstreamer-ffmpeg
+      - gstreamer1-plugins-bad-free-extras
+      - gstreamer1-plugins-ugly
+      - fontawesome-fonts
+      - rpmconf
+      - fedpkg
+      - fedora-packager
+      - copr-cli
+      - gnome-mahjongg
+      - fpaste
+      - pandoc
+      - powerline-fonts
+      - shotwell
+      - libvirt
+      - libvirt-devel
+      - fish
+      - pulseaudio-utils
+      - '@virtualization'
+      - '@development-tools'

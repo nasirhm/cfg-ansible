@@ -1,2 +1,3 @@
 ---
 # vars file for system/fedora-workstation
+fedora_version: 32

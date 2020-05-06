@@ -1,0 +1,14 @@
+---
+- name: Set up Nasir's preffered Fedora Workstation configuration
+  hosts: localhost
+  become: yes
+
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    target_group: nasirhm
+    target_user: nasirhm
+    target_user_name: Nasir Hussain
+    user_home_dir: /home/nasirhm
+
+  roles:
+    - {role: apps/jetbrains-toolbox}

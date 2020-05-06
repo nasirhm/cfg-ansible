@@ -12,21 +12,27 @@
     state: directory
     path: "{{ user_home_dir }}/.config/i3"
     group: "{{ target_user }}"
-    owner: "{{ targer_user }}"
+    owner: "{{ target_user }}"
 
 - name: create i3status user config directory
   file:
     state: directory
     path: "{{user_home_dir }}/.config/i3status"
     group: "{{ target_user }}"
-    owner: "{{ targer_user }}"
+    owner: "{{ target_user }}"
+
+- name: Installing packages required by the config file
+  package:
+    state: present
+    name: 
+      - brightlight
 
 - name: add i3wm user config files
   copy:
     src: "{{ role_path }}/files/config"
     dest: "{{ user_home_dir }}/.config/i3/config"
     group: "{{ target_user }}"
-    owner: "{{ targer_user }}"
+    owner: "{{ target_user }}"
 
 - name: add i3status user config file
   copy:

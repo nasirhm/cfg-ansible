@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Cantarell 9
+font pango:Cantarell 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -180,7 +180,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 	position bottom
-	font pango:overpassmono,FontAwesome 8
+	font pango:overpassmono,FontAwesome 11
 	status_command i3status -c $HOME/.config/i3status/config
 	tray_output primary
 
@@ -202,3 +202,10 @@ exec --no-startup-id feh --bg-scale ~/Pictures/.wallpapers/yourlieinapril-kaori.
 bindsym $mod+Control+l exec "$HOME/.config/i3/i3exit.sh lock"
 bindsym $mod+Control+s exec "$HOME/.config/i3/i3exit.sh suspend"
 exec "xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &"
+
+# Invert scrolling (natural scrolling)
+exec --no-startup-id "synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111"
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec "brightlight -p --increment 10"
+bindsym XF86MonBrightnessDown exec "brightlight -p --decrement 10"

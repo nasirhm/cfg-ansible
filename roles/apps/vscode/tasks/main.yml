@@ -1,0 +1,24 @@
+---
+# tasks file for vscode (It currently only supports Fedora or Any RPM based OS)
+- name: set microsoft repo with yum
+  yum_repository:
+    name: code
+    description: vscode
+    file: vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgcheck: yes
+
+- name: Install VSCode
+  package:
+    state: present
+    name: 
+      - code
+
+- name: Install extensions
+  shell: "code --install-extension {{ item }}"
+  become: no
+  loop:
+    - ExodiusStudios.comment-anchors
+    - dracula-theme.theme-dracula
+    - whtouche.vscode-js-console-utils

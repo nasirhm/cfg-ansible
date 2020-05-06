@@ -4,8 +4,8 @@
   package:
     state: latest
     name:
-      - https://download1.fedoraproject.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
-      - https://download1.fedoraproject.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
+      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
 
 - name: remove unused packages
   package:
@@ -56,7 +56,7 @@
       - wireshark
       - yamllint
       - youtube-dl
-      - inkspace
+      - inkscape
       - java-11-openjdk
       - feh
       - buildah
@@ -79,5 +79,10 @@
       - libvirt-devel
       - fish
       - pulseaudio-utils
+      - postgresql
+      - postgresql-server
+      - sqlite
+      - sqlite-doc
+      - sqlitebrowser
       - '@virtualization'
       - '@development-tools'

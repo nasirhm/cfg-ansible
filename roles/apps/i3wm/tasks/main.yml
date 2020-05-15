@@ -26,6 +26,7 @@
     state: present
     name: 
       - brightlight
+      - ImageMagick
 
 - name: add i3wm user config files
   copy:

@@ -35,6 +35,7 @@
       - evolution-ews
       - evolution-help
       - tomahawk
+      - gnome-terminal
 
 - name: install base packages
   package:
@@ -84,5 +85,8 @@
       - sqlite
       - sqlite-doc
       - sqlitebrowser
+      - vagrant
+      - VirtualBox
+      - terminator
       - '@virtualization'
       - '@development-tools'

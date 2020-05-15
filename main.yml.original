@@ -17,4 +17,5 @@
     - {role: apps/thunderbird}
     - {role: apps/vscode}
     - {role: apps/slack}
+    - {role: apps/flatpaks}
 #    - {role: apps/jetbrains-toolbox}

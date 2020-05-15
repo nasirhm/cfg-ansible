@@ -1,0 +1,15 @@
+---
+# tasks file for flatpaks
+- name: Enable flathub repo
+  flatpak_remote: 
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+
+- name: Install riot from flatpak
+  flatpak:
+    name: im.riot.Riot
+    state: present
+    method: system
+    remote: flathub

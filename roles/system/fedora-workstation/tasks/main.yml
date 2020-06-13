@@ -42,7 +42,6 @@
     state: present
     name:
       - ansible
-      - podman
       - asciidoctor
       - chromium
       - git
@@ -60,7 +59,6 @@
       - inkscape
       - java-11-openjdk
       - feh
-      - buildah
       - ffmpeg
       - exfat-utils
       - gstreamer-ffmpeg
